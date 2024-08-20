@@ -60,10 +60,10 @@ class WLaSDI_wendy:
            dt: time-step used in FOM
            normal: normalization constant. Default as 1
            LS_vis: Boolean to visulaize a trajectory and discovered dynamics in the latent-space. Default True
-           WSINDy parameters
-           L: test function support
-           overlap: how much 2 consecutive test functions overlap. 
-           opt_tfsupp: toggle the use of optimal test function support
+           WENDy parameters: (Please refer to MathBioCU/WENDy or  MathBioCU/PyWENDy for more details)
+           toggle_VVp_svd, mt_params, subsample, gamma, ls_meth, mt_min, mt_max
+    
+           
         """
 
         self.training_values = training_values
