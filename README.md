@@ -22,6 +22,19 @@ The code requires:
 * Sympy: 1.11.1
 * MFEM
 
+## Instructions
+There are four examples included:
+* 1D Burgers Equation 
+* 2D Burgers Equation 
+* Radial Advection (MFEM example 9, problem 3)
+* Time-dependent Diffusion (MFEM example 16)
+  
+Each folder contains instructions for generating the data, training the neural networks or applying a linear data-compression technique, and using WLaSDI. For each example, generate the training data by using the "Build" file for the 1D and 2D Burgers examples. For radial advection and diffusion, refer to the detailed instructions in the problem folders for MFEM setup. Each folder includes a Jupyter notebook that explains the linear compression case. For the neural network models, please run the corresponding train scripts found in each problem folder.
+
+Two versions of WLaSDI are available: the "WLaSDI.py" class with the WSINDy implementation (from MathBioCU/WSINDy_ODE) and the "WLaSDI_wendy.py" class with the WENDy implementation (from MathBioCU/WENDy). Both implementations work well across the four examples, with comments provided within each class. Example usage is demonstrated in the Jupyter notebooks included in each example folder.
+
+If you have any questions or comments, please contact April Tran at chi.tran@colorado.edu
+  
 
 ## Acknowledgement
 This work was supported in part by a Rudy Horne Fellowship to AT. This work also received partial support from the U.S. Department of Energy, Office of Science, Office of Advanced Scientific Computing Research, as part of the CHaRMNET Mathematical Multifaceted Integrated Capability Center (MMICC) program, under Award Number DE-SC0023164 to Y. Choi at Lawrence Livermore National Laboratory, and under Award Number DE-SC0023346 to D.M. Bortz at the University of Colorado Boulder. Lawrence Livermore National Laboratory is operated by Lawrence Livermore National Security, LLC, for the U.S. Department of Energy, National Nuclear Security Administration under Contract DE-AC52-07NA27344.
