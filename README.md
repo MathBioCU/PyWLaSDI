@@ -8,7 +8,7 @@ We introduce a weak form-based version WLaSDI (Weak-form Latent Space Dynamics I
 
 ## Dependencies
 
-The code requires:
+These packages are verified for compatibility:
 * Python: 3.10.9
 * TensorFlow: 2.13.0
 * Numpy: 1.24.3
@@ -34,7 +34,9 @@ Each folder contains instructions for generating the data, training the neural n
 Two versions of WLaSDI are available: the "WLaSDI.py" class with the WSINDy implementation (from MathBioCU/WSINDy_ODE) and the "WLaSDI_wendy.py" class with the WENDy implementation (from MathBioCU/WENDy). Both implementations work well across the four examples, with comments provided within each class. Example usage is demonstrated in the Jupyter notebooks included in each example folder.
 
 If you have any questions or comments, please contact April Tran at chi.tran@colorado.edu
-  
+
+## For LC Lassen users
+[OpenCE 1.8.0](https://lc.llnl.gov/confluence/pages/viewpage.action?pageId=747700633) has been verified for compatibility. An example bash script is provided for the 1D Burgers case, and other cases are configured similarly. For additional help, refer to the documentation or contact support.
 
 ## Acknowledgement
 This work was supported in part by a Rudy Horne Fellowship to AT. This work also received partial support from the U.S. Department of Energy, Office of Science, Office of Advanced Scientific Computing Research, as part of the CHaRMNET Mathematical Multifaceted Integrated Capability Center (MMICC) program, under Award Number DE-SC0023164 to Y. Choi at Lawrence Livermore National Laboratory, and under Award Number DE-SC0023346 to D.M. Bortz at the University of Colorado Boulder. Lawrence Livermore National Laboratory is operated by Lawrence Livermore National Security, LLC, for the U.S. Department of Energy, National Nuclear Security Administration under Contract DE-AC52-07NA27344.
