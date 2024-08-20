@@ -11,7 +11,7 @@ import time
 
 class WLaSDI:
     """
-    WLaSDI class for data-driven ROM. Functions: train_dynamics approximates dynamical systems of the latent-space. 
+    WLaSDI class for weak form data-driven ROM. Functions: train_dynamics approximates dynamical systems of the latent-space. 
                                                 generate_FOM uses an initial condition and parameter values to generate a new model
     NOTE: To avoid errors, make sure to set NN = True for use with autoencoder.
     
@@ -50,24 +50,23 @@ class WLaSDI:
             self.decoder = lambda traj: decoder(torch.tensor(traj.astype('float32')).to(device)).cpu().detach().numpy()
             
         return
-    
+
     def train_dynamics(self, ls_trajs, training_values, t, normal = 1, degree = 1, LS_vis = True, gamma = 0, threshold = 0, L = 30, overlap = 0.5, useGLS = 1e-12):
         """
-        Approximates the dynamical system for the latent-space. Local == True, use generate_FOM. 
+        Approximates the dynamical system for the latent space. Local == True, use generate_FOM. 
         
         Inputs:
            ls_trajs: latent-space trajectories in a list of arrays formatted as [time, space]
            training_values: list/array of corresponding parameter values to above
            dt: time-step used in FOM
            normal: normalization constant. Default as 1
-           LS_vis: Boolean to visulaize a trajectory and discovered dynamics in the latent-space. Default True
+           LS_vis: Boolean to visualize a trajectory and discover dynamics in the latent space. Default True
 
            WSINDy parameters
            L: test function support
            overlap: how much 2 consecutive test functions overlap. 
            gamma: regularization param
            threshold: sparsification param (always set to 0)
-
         """
         self.training_values = training_values
         self.ls_trajs = ls_trajs
@@ -174,6 +173,7 @@ class WLaSDI:
             pred_IC: Initial condition of the desired simulation
             pred_value: Associated parameter values
             t: time stamps corresponding to training FOMs
+            epsilon, function: RBF interpolation params
         """
         IC = self.IC_gen(pred_IC)
         if self.Local == False: # Global approach
